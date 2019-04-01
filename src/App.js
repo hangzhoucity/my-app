@@ -12,14 +12,12 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
-<<<<<<< HEAD
-           hello world
-=======
+         
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
->>>>>>> parent of aae87d1... first commit
+
           >
             Learn React
           </a>
