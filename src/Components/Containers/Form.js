@@ -32,7 +32,7 @@ class Form extends Component {
       sexe: [],
       tel: ""
    });
- }
+ };
 
     render() {
       return (
@@ -89,7 +89,7 @@ class Form extends Component {
             <input type="telephone" 
               name="tel" 
               defaultValue={this.state.tel} 
-              onChange= {e =>this.handleChange(e)} required/></label>
+              onChange= {e =>this.handleChange(e)} required/></label><br></br>
 
           <button onClick ={ e => this.onSubmit(e)}> Submit </button>
        </form>

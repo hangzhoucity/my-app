@@ -6,9 +6,9 @@
     margin: 0 auto;
 }
 
-input[type=text],input[type=date], input[type = tel], select, textarea {
+input[type=text],input[type=date], input[type = telephone], select, textarea {
     text-align: center;
-    width: 30%;
+    width: 40%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
