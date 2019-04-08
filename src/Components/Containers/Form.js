@@ -22,6 +22,16 @@ class Form extends Component {
  onSubmit = (e) => {
    e.preventDefault();
    this.props.onSubmit(this.state)
+   this.setState ({
+      MD: "",
+      firstName: "",
+      lastName: "",
+      date: "",
+      RAMQ: "",
+      dossier: "",
+      sexe: [],
+      tel: ""
+   });
  }
 
     render() {
