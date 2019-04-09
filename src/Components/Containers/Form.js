@@ -1,5 +1,26 @@
 import React, { Component } from 'react';
-import './Form.css';
+//import './Form.css';
+import Input from "./Input"
+import styled from 'styled-components'
+
+const StyledForm = styled.form`
+display: flex ;
+flex-direction: column;
+align-items: flex-start;
+`;
+
+const StyledFormPage = styled.div `
+display: flex;
+
+`;
+
+const StyledFormDate = styled.div`
+
+`;
+
+const StyledDate = styled.div`
+
+`;
 
 class Form extends Component {
     state = {
@@ -36,63 +57,79 @@ class Form extends Component {
 
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label id = "MD"> MD responsable :  
-            <input type="text" 
-              name="MD" 
-              defaultValue={this.state.MD} 
-              onChange= {e =>this.handleChange(e)} required/>
-          </label> <br></br>
+        <StyledFormDate>
+        <StyledFormPage>
+        <StyledForm onSubmit={this.handleSubmit}>
+          <Input
+            label="MD responsable"
+            name="MD"
+            firstName="MD"
+            text="text"
+            handleChange={this.handleChange}
+            ></Input>
 
-          <label id = "firstName"> Prénom : 
-            <input type="text" 
-              name="firstName" 
-              defaultValue={this.state.firstName}
-              onChange = {e =>this.handleChange(e)} required/> 
-          </label> <br></br>
+          <Input
+            label="Prenom"
+            name="Prenom"
+            firstName="firstName"
+            text="text"
+            handleChange={this.handleChange}
+            ></Input>
 
-          <label id = "lastName"> Nom : 
-            <input type="text" 
-              name="lastName" 
-              defaultValue={this.state.lastName} 
-              onChange= {e =>this.handleChange(e)} required/>
-          </label> <br></br>
 
-          <label htmlFor="birthdate"> Date de naissance : </label>
-             <input id="birthdate" 
-              name="date" 
-              type="date" 
-              defaultValue={this.state.date}
-              onChange= {e =>this.handleChange(e)} required/><br></br>
+          <Input
+            label="Nom"
+            name="Nom"
+            firstName="Nom"
+            text="text"
+            handleChange={this.handleChange}
+            ></Input>
 
-          <label id = "RAMQ"> RAMQ : 
-            <input type="text" 
-              name="RAMQ" 
-              defaultValue={this.state.RAMQ} 
-              onChange= {e =>this.handleChange(e)} required/>
-          </label> <br></br>
+          <Input
+            label="date"
+            name="date"
+            firstName="date"
+            text="birthday"
+            handleChange={this.handleChange}
+            ></Input>
 
-          <label id = "dossier"> Dossier :  
-            <input type="text" 
-              name="dossier" 
-              defaultValue={this.state.Dossier} 
-              onChange= {e =>this.handleChange(e)} required/>
-          </label> <br></br>
+          <Input
+            label="RAMQ"
+            name="RAMQ"
+            firstName="RAMQ"
+            text="text"
+            handleChange={this.handleChange}
+            ></Input>
+
+          <Input
+            label="dossier"
+            name="dossier"
+            firstName="dossier"
+            text="text"
+            handleChange={this.handleChange}
+            ></Input>
 
           <label id = "sexe"> Sexe : 
           <select defaultValue={this.state.male} onChange={this.handleChange}> 
                   <option name="male"> Male</option>
                   <option name="female">Female</option>
-          </select> </label><br></br>
+          </select> </label>
 
-          <label id = "tel"> Téléphone : 
-            <input type="telephone" 
-              name="tel" 
-              defaultValue={this.state.tel} 
-              onChange= {e =>this.handleChange(e)} required/></label><br></br>
+          <Input
+            label="tel"
+            name="tel"
+            firstName="tel"
+            text="tel"
+            handleChange={this.handleChange}
+            ></Input>
 
           <button onClick ={ e => this.onSubmit(e)}> Submit </button>
-       </form>
+       </StyledForm>
+
+       <StyledDate>
+       </StyledDate>
+       </StyledFormPage>
+       </StyledFormDate>
       );
     }
   }
