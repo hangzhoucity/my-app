@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import './Form.css';
 import Input from "./Input"
+import DatePicker from "./DatePicker"
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
@@ -9,7 +10,7 @@ flex-direction: column;
 align-items: flex-start;
 `;
 
-const StyledFormPage = styled.div `
+const StyledFormPage = styled.div`
 display: flex;
 
 `;
@@ -20,6 +21,12 @@ const StyledFormDate = styled.div`
 
 const StyledDate = styled.div`
 
+`;
+
+const StyleButton = styled.div`
+justify-content: flex-end;
+flex-direction: row-reverse;
+align-item: flex-end;
 `;
 
 class Form extends Component {
@@ -69,7 +76,7 @@ class Form extends Component {
             ></Input>
 
           <Input
-            label="Prenom"
+            label="Prénom"
             name="Prenom"
             firstName="firstName"
             text="text"
@@ -85,13 +92,13 @@ class Form extends Component {
             handleChange={this.handleChange}
             ></Input>
 
-          <Input
-            label="date"
-            name="date"
+          <DatePicker
+            label="Date de naissance"
+            date="date"
             firstName="date"
             text="birthday"
             handleChange={this.handleChange}
-            ></Input>
+            ></DatePicker>
 
           <Input
             label="RAMQ"
@@ -102,28 +109,29 @@ class Form extends Component {
             ></Input>
 
           <Input
-            label="dossier"
+            label="No de dossier"
             name="dossier"
-            firstName="dossier"
+            firstName="Dossier"
             text="text"
             handleChange={this.handleChange}
             ></Input>
 
-          <label id = "sexe"> Sexe : 
+          <label id = "sexe"> Sexe 
           <select defaultValue={this.state.male} onChange={this.handleChange}> 
                   <option name="male"> Male</option>
                   <option name="female">Female</option>
           </select> </label>
 
           <Input
-            label="tel"
+            label="No de téléphone"
             name="tel"
             firstName="tel"
             text="tel"
             handleChange={this.handleChange}
             ></Input>
-
-          <button onClick ={ e => this.onSubmit(e)}> Submit </button>
+      <StyleButton>
+          <button onClick ={ e => this.onSubmit(e)}> Ajouter </button>
+      </StyleButton>
        </StyledForm>
 
        <StyledDate>
