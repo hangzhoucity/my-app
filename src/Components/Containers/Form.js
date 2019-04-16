@@ -23,10 +23,16 @@ const StyledDate = styled.div`
 
 `;
 
-const StyleButton = styled.div`
-justify-content: flex-end;
-flex-direction: row-reverse;
-align-item: flex-end;
+const StyleButton = styled.button`
+display:flex;
+justify-content:flex-end;
+align-items:center; 
+background: gray;
+width:200px;
+height:40px;
+font-size:14px;
+border-radius: 10px;
+font-size:20px; 
 `;
 
 class Form extends Component {
@@ -129,9 +135,8 @@ class Form extends Component {
             text="tel"
             handleChange={this.handleChange}
             ></Input>
-      <StyleButton>
-          <button onClick ={ e => this.onSubmit(e)}> Ajouter </button>
-      </StyleButton>
+      
+      <StyleButton onClick ={ e => this.onSubmit(e)}> Ajouter </StyleButton>
        </StyledForm>
 
        <StyledDate>
