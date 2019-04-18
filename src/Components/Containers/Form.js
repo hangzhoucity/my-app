@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Input from "./Input"
 import DatePicker from "./DatePicker"
 import styled from 'styled-components'
+import { Select } from '@material-ui/core';
+import SelectGender from "./SelectGender";
 
 const StyledForm = styled.form`
 display: flex ;
@@ -122,11 +124,24 @@ class Form extends Component {
             handleChange={this.handleChange}
             ></Input>
 
-          <label id = "sexe"> Sexe 
-          <select defaultValue={this.state.male} onChange={this.handleChange}> 
-                  <option name="male"> Male</option>
-                  <option name="female">Female</option>
-          </select> </label>
+          <SelectGender
+            label="M"
+            name="M"
+            id="gender"
+            firstName="gender"
+            radio="radio"
+            checked = "checked"
+            handleChange={this.handleChange}
+            ></SelectGender>
+
+          <SelectGender
+            label="F"
+            name="F"
+            id="gender"
+            firstName="gender"
+            radio="radio"
+            handleChange={this.handleChange}
+            ></SelectGender>
 
           <Input
             label="No de téléphone"

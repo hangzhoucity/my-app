@@ -28,7 +28,7 @@ const { classes } = props;
         <StyleLabel id = {props.firstName}> {`${props.label}`}
         <StyleInput type="date"
           name={props.firstName}
-          defaultValue="2019-05-24"
+          defaultValue="YYYY-MM-DD"
           onChange = {e =>props.handleChange(e)} 
           InputLabelProps={{
             shrink: true,

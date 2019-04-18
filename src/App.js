@@ -8,12 +8,35 @@ import Tab from '@material-ui/core/Tab';
 import AppBar from '@material-ui/core/AppBar';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components';
+
+const StyleItem = styled.p`
+margin : 10px;
+display: flex;
+flex-direction: column;
+`;
+
+const StyleHead = styled.div`
+display: flex;
+align-content: flex-start;
+justify-content: space-between;
+background: lightgray;
+`;
+
+const StyleLeft =styled.div`
+display: flex;
+align-content: flex-start;
+justify-content: space-between;
+background: lightgray;
+`;
 
 const useStyles = makeStyles({
   test: {
     flexGrow: 1,
   },
 });
+
+
 
 function App () {
 
@@ -41,18 +64,27 @@ function App () {
   };
   
     return (
-       
+
       <div className = "App">
+      <StyleHead className ="Head">
+      <StyleItem> TREMBLAY, Jean </StyleItem> 
+      <StyleItem> Dossier 138493</StyleItem>
+      </StyleHead>
+      <StyleLeft className = "LeftHead">
+      <StyleItem> DDN 1-janv-1979</StyleItem>
+      <StyleItem>RAMQ TREJ79010116</StyleItem>
+      </StyleLeft>
+      
     <Paper className={classes.test}>
     <AppBar position="static">
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary" 
+        indicatorColor="white"
+        textColor="black" 
       >
         <Tab label="Dossier" />
-        <Tab label="Statistique" />
+        <Tab label="Statistiques" />
         <Tab label="+" />
       </Tabs>
       </AppBar>

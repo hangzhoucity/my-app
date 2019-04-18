@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 
 
 
-function Tabs() {
+function Tabstest() {
 
   return (
     <Paper >
