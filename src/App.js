@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
 import Form from "./Components/Containers/Form.js";
-import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import AppBar from '@material-ui/core/AppBar';
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import Dossier from "./Components/Containers/Dossier.js";
 
@@ -31,39 +28,24 @@ justify-content: space-between;
 background: lightgray;
 `;
 
-const useStyles = makeStyles({
-  test: {
-    flexGrow: 1,
-  },
-});
-
+const StyledTabs = styled(Tabs)`
+background-color:gray;
+`;
 
 
 function App () {
 
+  //creating object
   const onSubmit = (fields) => {
     console.log ("App com got : ", fields );
   };
   
-  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   function handleChange(event, newValue) {
     setValue(newValue);
   }
 
-  function TabContainer(props) {
-    return (
-      <Typography component="div" style={{ padding: 8 * 3 }}>
-        {props.children}
-      </Typography>
-    );
-  }
-  
-  TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
-  
     return (
 
       <div className = "App">
@@ -76,24 +58,26 @@ function App () {
       <StyleItem>RAMQ TREJ79010116</StyleItem>
       </StyleLeft>
       
-    <Paper className={classes.test}>
+    <Paper >
     <AppBar position="static">
-      <Tabs
+      <StyledTabs
         value={value}
         onChange={handleChange}
         indicatorColor="white"
         textColor="black" 
       >
+        <Tab label="☰" />
         <Tab label="Dossier" />
         <Tab label="Statistiques" />
         <Tab label="+" />
-      </Tabs>
+      </StyledTabs>
       </AppBar>
     </Paper>
-      {value === 0 && <TabContainer><Dossier></Dossier></TabContainer>}
-      {value === 1 && <TabContainer>Statistique</TabContainer>}
-      {value === 2 && <TabContainer><Form onSubmit = {fields => this.onSubmit (fields) } 
-      /></TabContainer>}
+      {value === 0  }
+      {value === 1 && <Dossier></Dossier>}
+      {value === 2 }
+      {value === 3 && <Form onSubmit = {fields => this.onSubmit (fields) } 
+      />}
       
       </div>
     );
