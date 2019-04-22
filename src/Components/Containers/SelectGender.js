@@ -1,40 +1,27 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import './SelectGender.css';
 
-const StyleBox = styled.div`
-    margin: 0; box-sizing: border-box;
-	width: 25%; height: 50%;
-	font-size: 20px; 
-    box-sizing: border-box;
-	display: flex; flex-flow: row nowrap;
-    justify-content: flex-start; 
-    padding: .75rem 2rem;
-	display: inline-block;
-	border: solid 1px #DDD; background-color: #FFF;
-    line-height: 140%; text-align: center;
-    border-radius: 6px 0 0 6px;
-    margin-left:10px
-`;
-
-const StyleInputGender = styled.input`
-visibility:hidden;
-
-
+const StyleGender = styled.label`
+padding: .75rem 2rem; box-sizing: border-box;
+position: relative; display: inline-block;
+border: solid 2px #DDD; background-color: #FFF;
 `;
 
 const SelectGender = (props) => {
 
-    return (
+return (
+<body>
 
-<StyleBox class="toggle">
-         <label id = {props.firstName}> {`${props.label}`}
-         <StyleInputGender type={props.radio} 
-         name={props.firstName}
-         defaultValue={props.value}
-         checked = {props.checked}
-         onChange = {e =>props.handleChange(e)} required />
-         </label>
-</StyleBox>
+<div class="center-align"> 
+{`${props.label}`}
+<input type="radio" name="size" id="size_1" value="small"  onChange = {e =>props.handleChange(e)} checked/>
+ <StyleGender class= "gender" for="size_1">M</StyleGender>
+  
+ <input type="radio" name="size" id="size_2" value="small" onChange = {e =>props.handleChange(e)}  /> 
+ <StyleGender for="size_2">F </StyleGender>
+</div>
+</body>
 
     )
 }

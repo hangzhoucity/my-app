@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { Select } from '@material-ui/core';
 import SelectGender from "./SelectGender";
 
+//styling form
 const StyledForm = styled.form`
 display: flex ;
 flex-direction: column;
@@ -14,28 +15,35 @@ align-items: flex-start;
 
 const StyledFormPage = styled.div`
 display: flex;
-
 `;
 
 const StyledFormDate = styled.div`
-
 `;
 
+//Styling the timeline
 const StyledDate = styled.div`
-
 `;
 
+//styling button
 const StyleButton = styled.button`
 display:flex;
-justify-content:flex-end;
-align-items:center; 
-background: gray;
-width:200px;
-height:40px;
-font-size:14px;
+background: lightgray;
+width: 150px;
+height:60px;
 border-radius: 10px;
-font-size:20px; 
+font-size:25px; 
+justify-content: center;
 `;
+
+//button positioning
+const ButtonPosition = styled.div`
+display: flex;
+justify-content: flex-end
+`;
+
+function myFunction() {
+  document.getElementById("gender").focus();
+}
 
 class Form extends Component {
     state = {
@@ -124,22 +132,8 @@ class Form extends Component {
             handleChange={this.handleChange}
             ></Input>
 
-          <SelectGender
-            label="M"
-            name="M"
-            id="gender"
-            firstName="gender"
-            radio="radio"
-            checked = "checked"
-            handleChange={this.handleChange}
-            ></SelectGender>
-
-          <SelectGender
-            label="F"
-            name="F"
-            id="gender"
-            firstName="gender"
-            radio="radio"
+          <SelectGender 
+            label= "sexe"
             handleChange={this.handleChange}
             ></SelectGender>
 
@@ -151,12 +145,15 @@ class Form extends Component {
             handleChange={this.handleChange}
             ></Input>
       
-      <StyleButton onClick ={ e => this.onSubmit(e)}> Ajouter </StyleButton>
        </StyledForm>
 
-       <StyledDate>
-       </StyledDate>
+       
        </StyledFormPage>
+       <ButtonPosition>
+      <StyleButton onClick ={ e => this.onSubmit(e)}> Ajouter </StyleButton>
+      </ButtonPosition>
+      <StyledDate>
+       </StyledDate>
        </StyledFormDate>
       );
     }

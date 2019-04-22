@@ -9,6 +9,7 @@ import AppBar from '@material-ui/core/AppBar';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
+import Dossier from "./Components/Containers/Dossier.js";
 
 const StyleItem = styled.p`
 margin : 10px;
@@ -89,7 +90,7 @@ function App () {
       </Tabs>
       </AppBar>
     </Paper>
-      {value === 0 && <TabContainer>Dossier</TabContainer>}
+      {value === 0 && <TabContainer><Dossier></Dossier></TabContainer>}
       {value === 1 && <TabContainer>Statistique</TabContainer>}
       {value === 2 && <TabContainer><Form onSubmit = {fields => this.onSubmit (fields) } 
       /></TabContainer>}

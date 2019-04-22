@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
 
@@ -28,7 +28,7 @@ const { classes } = props;
         <StyleLabel id = {props.firstName}> {`${props.label}`}
         <StyleInput type="date"
           name={props.firstName}
-          defaultValue="YYYY-MM-DD"
+          defaultValue="AAA-MM-JJ"
           onChange = {e =>props.handleChange(e)} 
           InputLabelProps={{
             shrink: true,
