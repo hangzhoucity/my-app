@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
-import Form from "./Components/Containers/Form.js";
+import Form from "./Components/Containers/FormPage/Form.js";
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import AppBar from '@material-ui/core/AppBar';
 import styled from 'styled-components';
-import Dossier from "./Components/Containers/Dossier.js";
+import Dossier from "./Components/Containers/FolderPage/Dossier.js";
+import DoctorList from './Components/Containers/DoctorList/DoctorList.js'
 
 const StyleItem = styled.p`
 margin : 10px;
@@ -29,8 +29,46 @@ background: lightgray;
 `;
 
 const StyledTabs = styled(Tabs)`
-background-color:gray;
+background-color:white;
+margin-bottom:10px;
+width:500px;
+display:flex;
+justify-content:space-between;
 `;
+
+const FirstTab = styled(Tab)`
+&&{
+width:50px;
+min-width:50px;
+background-color:gray;
+margin-right: 0 4px 0 0 ;
+}
+`;
+
+const LastTab = styled(Tab)`
+&&{
+width:50px;
+min-width:50px;
+background-color:gray;
+margin-right: 0 0 0 4px;
+
+}
+`;
+
+const ThirdTab = styled(Tab)`
+&&{
+margin-right:2px;
+background-color:gray;
+}
+`;
+
+const SecondTab = styled(Tab)`
+&&{
+margin: 0 2px;
+background-color:gray;
+}
+`;
+
 
 
 function App () {
@@ -45,7 +83,7 @@ function App () {
   function handleChange(event, newValue) {
     setValue(newValue);
   }
-
+console.log("value" , value)
     return (
 
       <div className = "App">
@@ -59,24 +97,24 @@ function App () {
       </StyleLeft>
       
     <Paper >
-    <AppBar position="static">
       <StyledTabs
         value={value}
         onChange={handleChange}
         indicatorColor="white"
         textColor="black" 
       >
-        <Tab label="☰" />
-        <Tab label="Dossier" />
-        <Tab label="Statistiques" />
-        <Tab label="+" />
+        <FirstTab label="☰" />
+        <SecondTab label="Dossier" />
+        <ThirdTab label="Statistiques" />
+        <LastTab label="+" />
       </StyledTabs>
-      </AppBar>
     </Paper>
-      {value === 0  }
-      {value === 1 && <Dossier></Dossier>}
+      {value === 0 && <DoctorList/>}
+      {value === 1 && <Dossier/>}
       {value === 2 }
-      {value === 3 && <Form onSubmit = {fields => this.onSubmit (fields) } 
+      {value === 3 && 
+      <Form 
+        onSubmit = {fields => this.onSubmit (fields) } 
       />}
       
       </div>
