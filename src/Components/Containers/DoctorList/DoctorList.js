@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState }from 'react';
 import styled from 'styled-components';
+import renderIf from 'render-if';
 
 const DoctorName = styled.div`
 margin: 5px;
@@ -17,8 +18,26 @@ display:flex;
 flex-direction:column;
 `;
 
+const ClientName = styled.div`
+width:200px;
+height:50px;
+display:flex;
+justify-content:center;
+`;
+
+const ClientList = styled.div`
+display:flex;
+flex-direction:column;
+`;
+
 const DoctorList = () =>{
     
+const [doctorName, setDoctorName] = useState("");
+
+function handleChange(doctorName) {
+    console.log ("blahifhi", doctorName)
+    setDoctorName(doctorName);
+  }
 
 const mockData = ["Julie Bertrand" ,"David Germain" , "Tam Le Duc"];
 
@@ -45,14 +64,28 @@ return(
     <Container>
         {doctorListData.map(doctor => {
             return (
-                <DoctorName>{doctor}</DoctorName>
+                <DoctorName 
+                value={doctor.name}
+                onClick={() =>{handleChange(doctor.name)}}
+                >
+                {doctor.name}
+                </DoctorName>
             )
         })}
-        {renderIf(doctorname)(
+        {doctorName?
             <ClientList>
-                {doctor.map()}
-            </ClientList>
-        )}
+               {doctorListData.map(doctor =>{
+                if(doctor.name === doctorName){
+                    return( 
+                      
+                            {doctor.map(client => <ClientName>{client}</ClientName>)}
+                 
+                    )
+                }
+                  
+               })}
+            </ClientList>:null
+        }
     </Container>
 )
 }
