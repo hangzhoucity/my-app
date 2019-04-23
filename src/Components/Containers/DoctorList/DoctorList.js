@@ -18,16 +18,41 @@ flex-direction:column;
 `;
 
 const DoctorList = () =>{
+    
 
-const MockData = ["Julie Bertrand" ,"David Germain" , "Tam Le Duc"];
+const mockData = ["Julie Bertrand" ,"David Germain" , "Tam Le Duc"];
+
+
+
+const doctor1 = {
+    name:"Colisse",
+    age:22,
+    sexe:"M",
+    clients:["julie","clara"]
+}
+
+const doctor2 = {
+    name:"Colisse",
+    age:22,
+    sexe:"M",
+    clients:["julie","clara"]
+}
+
+const doctorListData = [doctor1,doctor2 ];
+
 
 return(
     <Container>
-        {MockData.map(doctor => {
+        {doctorListData.map(doctor => {
             return (
                 <DoctorName>{doctor}</DoctorName>
             )
         })}
+        {renderIf(doctorname)(
+            <ClientList>
+                {doctor.map()}
+            </ClientList>
+        )}
     </Container>
 )
 }
