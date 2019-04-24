@@ -6,21 +6,28 @@ const DoctorName = styled.div`
 margin: 5px;
 background-color:gray;
 display:flex;
-justify-content:center;
+justify-content:flex-start;
 padding: 5px 10px;
 width:200px;
 height:30px;
+
 `;
 
 const Container = styled.div`
 width:auto;
 display:flex;
-flex-direction:column;
+flex-direction: column;
 `;
 
 const ClientName = styled.div`
+padding: 5px 10px;
 width:200px;
 height:50px;
+display:flex;
+flex-direction:column;
+
+`;
+const ClientItem = styled.div`
 display:flex;
 justify-content:center;
 `;
@@ -28,6 +35,7 @@ justify-content:center;
 const ClientList = styled.div`
 display:flex;
 flex-direction:column;
+justify-content:flex-end;
 `;
 
 const DoctorList = () =>{
@@ -40,8 +48,6 @@ function handleChange(doctorName) {
   }
 
 const mockData = ["Julie Bertrand" ,"David Germain" , "Tam Le Duc"];
-
-
 
 const doctor1 = {
     name:"Colisse",
@@ -77,10 +83,10 @@ return(
                {doctorListData.map(doctor =>{
                 if(doctor.name === doctorName){
                     return( 
-                      
-                            {doctor.map(client => <ClientName>{client}</ClientName>)}
-                 
-                    )
+                        <ClientName>
+                            {doctor.clients.map(client => <ClientItem>{client}</ClientItem>)}
+                        </ClientName>
+                     )
                 }
                   
                })}
