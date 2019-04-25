@@ -34,6 +34,7 @@ margin-bottom:10px;
 width:500px;
 display:flex;
 justify-content:space-between;
+font-size:19;
 `;
 
 const FirstTab = styled(Tab)`
