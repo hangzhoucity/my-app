@@ -3,39 +3,65 @@ import styled from 'styled-components';
 import renderIf from 'render-if';
 
 const DoctorName = styled.div`
+display:flex;
+width:230px;
+height:50px;
+transition: .5s;
+`;
+
+const DoctorAdd = styled.div`
 margin: 5px;
-background-color:gray;
+background-color:#cccccc;
 display:flex;
 justify-content:flex-start;
 padding: 5px 10px;
 width:200px;
 height:30px;
-
+box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
+transform: scale (1.05);
 `;
+
 
 const Container = styled.div`
 width:auto;
 display:flex;
-flex-direction: column;
+flex-direction:column;
+`;
+
+const StyleClient = styled.p`
+display: flex;
+width:410px;
+height:30px;
+border: 1px solid #CCC;
+background-color : #e0e0eb ;
 `;
 
 const ClientName = styled.div`
-padding: 5px 10px;
-width:200px;
-height:50px;
+padding: 25px 70px;
 display:flex;
 flex-direction:column;
+align-self : flex-end;
 
 `;
 const ClientItem = styled.div`
 display:flex;
-justify-content:center;
+justify-content:flex-start;
+width:400px;
+height:30px;
+border: 1px solid #CCC;
+padding: 5px;
+
 `;
 
 const ClientList = styled.div`
+&&{
 display:flex;
 flex-direction:column;
-justify-content:flex-end;
+align-self:center;
+align-items: flex-start;
+justify-content: flex-start;
+margin: -13%;
+}
 `;
 
 const DoctorList = () =>{
@@ -69,21 +95,27 @@ const doctorListData = [doctor1,doctor2 ];
 return(
     <Container>
         {doctorListData.map(doctor => {
+            
             return (
+
                 <DoctorName 
                 value={doctor.name}
                 onClick={() =>{handleChange(doctor.name)}}
                 >
-                {doctor.name}
+                <DoctorAdd>{doctor.name}</DoctorAdd>
                 </DoctorName>
-            )
+                
+            ) 
         })}
+       
         {doctorName?
+            
             <ClientList>
                {doctorListData.map(doctor =>{
                 if(doctor.name === doctorName){
                     return( 
                         <ClientName>
+                            <StyleClient>Liste des patients</StyleClient>
                             {doctor.clients.map(client => <ClientItem>{client}</ClientItem>)}
                         </ClientName>
                      )

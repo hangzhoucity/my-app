@@ -18,14 +18,14 @@ const StyleHead = styled.div`
 display: flex;
 align-content: flex-start;
 justify-content: space-between;
-background: lightgray;
+background: #f2f2f2;
 `;
 
 const StyleLeft =styled.div`
 display: flex;
 align-content: flex-start;
 justify-content: space-between;
-background: lightgray;
+background: #f2f2f2;
 `;
 
 const StyledTabs = styled(Tabs)`
@@ -40,7 +40,7 @@ const FirstTab = styled(Tab)`
 &&{
 width:50px;
 min-width:50px;
-background-color:gray;
+background-color:#cccccc;
 margin-right: 0 4px 0 0 ;
 }
 `;
@@ -49,7 +49,7 @@ const LastTab = styled(Tab)`
 &&{
 width:50px;
 min-width:50px;
-background-color:gray;
+background-color:#cccccc;
 margin-right: 0 0 0 4px;
 
 }
@@ -58,18 +58,16 @@ margin-right: 0 0 0 4px;
 const ThirdTab = styled(Tab)`
 &&{
 margin-right:2px;
-background-color:gray;
+background-color:#cccccc;
 }
 `;
 
 const SecondTab = styled(Tab)`
 &&{
 margin: 0 2px;
-background-color:gray;
+background-color:#cccccc;
 }
 `;
-
-
 
 function App () {
 
