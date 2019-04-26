@@ -39,6 +39,7 @@ background-color : #e0e0eb ;
 `;
 
 const ClientName = styled.div`
+padding: 25px 70px;
 display:flex;
 flex-direction:column;
 align-self : flex-end;
@@ -61,7 +62,7 @@ flex-direction:column;
 align-self:center;
 align-items: flex-start;
 justify-content: flex-start;
-margin: -12%;
+margin: -9%;
 width: 100%;
 max-Width: 360px;
 }

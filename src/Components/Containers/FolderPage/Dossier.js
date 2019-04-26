@@ -2,18 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import styled from 'styled-components'
+import CheckedList from "./CheckedList";
 
 const StyleSelect = styled.option`
 display: flex;
 justify-content: center;
 align-content: center;
 align-items: center;
+`;
+
+const StyleChecked = styled.div`
+&&{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-content: flex-end;
+
+}
 `;
 
 const BootstrapInput = withStyles(theme => ({
@@ -74,10 +84,12 @@ class CustomizedSelects extends React.Component {
     this.setState({ tests: event.target.value });
   };
 
+
   render() {
     const { classes } = this.props;
 
     return (
+      <div>
       <form className={classes.root} autoComplete="off">
        
         <FormControl className={classes.margin}>
@@ -108,7 +120,13 @@ class CustomizedSelects extends React.Component {
            
           </NativeSelect>
         </FormControl>
+
+        
       </form>
+      <StyleChecked>
+        <CheckedList> </CheckedList>
+      </StyleChecked>
+      </div>
     );
   }
 }

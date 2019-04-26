@@ -38,7 +38,7 @@ justify-content: center;
 //button positioning
 const ButtonPosition = styled.div`
 display: flex;
-justify-content: flex-end
+justify-content: flex-end;
 `;
 
 function myFunction() {
