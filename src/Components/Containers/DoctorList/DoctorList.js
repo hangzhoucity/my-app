@@ -13,7 +13,7 @@ transition: .5s;
 
 const DoctorAdd = styled.div`
 margin: 5px;
-background-color:#cccccc;
+background-color:#DFDEE6;
 display:flex;
 justify-content:flex-start;
 padding: 5px 10px;

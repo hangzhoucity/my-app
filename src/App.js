@@ -3,7 +3,6 @@ import Form from "./Components/Containers/FormPage/Form.js";
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import AppBar from '@material-ui/core/AppBar';
 import styled from 'styled-components';
 import Dossier from "./Components/Containers/FolderPage/Dossier.js";
 import DoctorList from './Components/Containers/DoctorList/DoctorList.js'
@@ -15,23 +14,30 @@ flex-direction: column;
 `;
 
 const StyleHead = styled.div`
+margin-top : 10px;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
 display: flex;
 align-content: flex-start;
 justify-content: space-between;
-background: #f2f2f2;
+background: #FBFBFE;
 `;
 
 const StyleLeft =styled.div`
+padding-bottom: 10px;
+padding-left: 10px;
+padding-right: 10px;
 display: flex;
 align-content: flex-start;
 justify-content: space-between;
-background: #f2f2f2;
+background: #FBFBFE;
 `;
 
 const StyledTabs = styled(Tabs)`
 background-color:white;
 margin-bottom:10px;
-width:500px;
+width:426px;
 display:flex;
 justify-content:space-between;
 `;
@@ -40,7 +46,7 @@ const FirstTab = styled(Tab)`
 &&{
 width:50px;
 min-width:50px;
-background-color:#cccccc;
+background-color:#DFDEE6;
 margin-right: 0 4px 0 0 ;
 }
 `;
@@ -49,7 +55,7 @@ const LastTab = styled(Tab)`
 &&{
 width:50px;
 min-width:50px;
-background-color:#cccccc;
+background-color:#DFDEE6;
 margin-right: 0 0 0 4px;
 
 }
@@ -58,14 +64,14 @@ margin-right: 0 0 0 4px;
 const ThirdTab = styled(Tab)`
 &&{
 margin-right:2px;
-background-color:#cccccc;
+background-color:#DFDEE6;
 }
 `;
 
 const SecondTab = styled(Tab)`
 &&{
 margin: 0 2px;
-background-color:#cccccc;
+background-color:#DFDEE6;
 }
 `;
 

@@ -93,7 +93,7 @@ class CustomizedSelects extends React.Component {
       <form className={classes.root} autoComplete="off">
        
         <FormControl className={classes.margin}>
-        <p> Dr Paul | Dossier ouver le 19 avril</p>
+        <p> Dr Paul | Dossier ouvert le 19 avril</p>
           <InputLabel htmlFor="age-customized-native-simple" className={classes.bootstrapFormLabel}>
           </InputLabel>
           <NativeSelect

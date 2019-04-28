@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CheckBox from './CheckBox';
-import Button from '@material-ui/core/Button';
 import styled from 'styled-components'
+import { Button, Confirm } from 'semantic-ui-react'
 
 const StyledCheckList = styled.div`
  display: flex;
@@ -51,7 +51,16 @@ class CheckedList extends Component {
     items.map(this.createCheckbox)
   )
 
+  state = { open: false, result: 'show the modal to capture a result' }
+
+  show = () => this.setState({ open: true })
+  handleConfirm = () => this.setState({ result: 'confirmed', open: false })
+  handleNoCancer = () => this.setState({ result: 'No cancer', open: false })
+  handleCancel = () => this.setState({ result: 'cancelled', open: false })
+
   render() {
+    const { open, result } = this.state
+
     return (
       <div className="container">
         <div className="row">
@@ -61,7 +70,11 @@ class CheckedList extends Component {
             
               {this.createCheckboxes()}
               <StyledCheckList>
-              <Button variant="outlined" className="btn btn-default" type="submit">Congé</Button>
+              <p>
+        Result: <em>{result}</em>
+      </p>      
+              <Button variant="outlined" className="btn btn-default" type="submit" onClick={this.show}>Congé</Button>
+              <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm} onNoCancer = {this.handleNoCancer}/>
               </StyledCheckList>
             </form>
         
