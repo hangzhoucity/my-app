@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import CheckBox from './CheckBox';
 import styled from 'styled-components'
-import { Button, Confirm } from 'semantic-ui-react'
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Paper from '@material-ui/core/Paper';
+
 
 const StyledCheckList = styled.div`
  display: flex;
@@ -18,7 +25,10 @@ const items = [
   'Investigation complétée'
 ];
 
+
 class CheckedList extends Component {
+
+  
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
   }
@@ -51,17 +61,24 @@ class CheckedList extends Component {
     items.map(this.createCheckbox)
   )
 
-  state = { open: false, result: 'show the modal to capture a result' }
+  state = {
+    open: false,
+  };
 
-  show = () => this.setState({ open: true })
-  handleConfirm = () => this.setState({ result: 'confirmed', open: false })
-  handleNoCancer = () => this.setState({ result: 'No cancer', open: false })
-  handleCancel = () => this.setState({ result: 'cancelled', open: false })
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
 
   render() {
-    const { open, result } = this.state
 
     return (
+
+      
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
@@ -70,11 +87,32 @@ class CheckedList extends Component {
             
               {this.createCheckboxes()}
               <StyledCheckList>
-              <p>
-        Result: <em>{result}</em>
-      </p>      
-              <Button variant="outlined" className="btn btn-default" type="submit" onClick={this.show}>Congé</Button>
-              <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm} onNoCancer = {this.handleNoCancer}/>
+                 
+              <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>Congé</Button>
+              <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          
+          
+        >
+          <DialogTitle id="draggable-dialog-title">Confirmation</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Donner congé au patient?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Oui
+            </Button>
+            <Button onClick={this.handleClose} color="primary">
+              Non
+            </Button>
+            <Button onClick={this.handleClose} color="primary">
+              Pas de cancer
+            </Button>
+          </DialogActions>
+        </Dialog>
               </StyledCheckList>
             </form>
         
