@@ -7,6 +7,73 @@ import styled from 'styled-components';
 import Dossier from "./Components/Containers/FolderPage/Dossier.js";
 import DoctorList from './Components/Containers/DoctorList/DoctorList.js'
 
+
+const App  =(props) => {
+
+const [apiResponse, setApiResponse] =useState('');
+
+const callAPI = () =>{
+    fetch("http://localhost:9000/testAPI")
+    .then(res => res.text())
+    .then(res => setApiResponse(res))
+    .catch (err => err);
+}
+const componentWillMount=()=>{
+    callAPI();
+}
+
+  //creating object
+  const onSubmit = (fields) => {
+    console.log ("App com got : ", fields );
+  };
+  
+  const [value, setValue] = React.useState(0);
+
+  function handleChange(event, newValue) {
+    setValue(newValue);
+  }
+console.log("value" , value)
+    return (
+
+
+      <div className = "App">
+      <StyleHead className ="Head">
+      <StyleItem> TREMBLAY, Jean </StyleItem> 
+      <StyleItem> Dossier 138493</StyleItem>
+      </StyleHead>
+      <StyleLeft className = "LeftHead">
+      <StyleItem> DDN 1-janv-1979</StyleItem>
+      <StyleItem>RAMQ TREJ79010116</StyleItem>
+      </StyleLeft>
+      
+    <Paper >
+      <StyledTabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="white"
+        textColor="black" 
+      >
+        <FirstTab label="☰" />
+        <SecondTab label="Dossier" />
+        <ThirdTab label="Statistiques" />
+        <LastTab label="+" />
+      </StyledTabs>
+    </Paper>
+      {value === 0 && <DoctorList/>}
+      {value === 1 && <Dossier/>}
+      {value === 2 }
+      {value === 3 && 
+      <Form 
+         onSubmit = {fields => onSubmit (fields) } 
+      />}
+      <p className="App-intro">{props => apiResponse(props)}</p>
+      </div>
+    );
+  
+}
+
+export default App;
+
 const StyleItem = styled.p`
 margin : 10px;
 display: flex;
@@ -74,71 +141,3 @@ margin: 0 2px;
 background-color:#DFDEE6;
 }
 `;
-
-function App () {
-
-const constructor = (props) =>{
-     props.state = { apiResponse: "" };
-}
-
-const callAPI=() =>{
-    fetch("http://localhost:9000/testAPI")
-    .then(res => res.text())
-    .then(res => this.setState({ apiResponse: res }))
-    .catch (err => err);
-}
-const componentWillMount=()=>{
-    callAPI();
-}
-
-  //creating object
-  const onSubmit = (fields) => {
-    console.log ("App com got : ", fields );
-  };
-  
-  const [value, setValue] = React.useState(0);
-
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
-console.log("value" , value)
-    return (
-
-
-      <div className = "App">
-      <StyleHead className ="Head">
-      <StyleItem> TREMBLAY, Jean </StyleItem> 
-      <StyleItem> Dossier 138493</StyleItem>
-      </StyleHead>
-      <StyleLeft className = "LeftHead">
-      <StyleItem> DDN 1-janv-1979</StyleItem>
-      <StyleItem>RAMQ TREJ79010116</StyleItem>
-      </StyleLeft>
-      
-    <Paper >
-      <StyledTabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="white"
-        textColor="black" 
-      >
-        <FirstTab label="☰" />
-        <SecondTab label="Dossier" />
-        <ThirdTab label="Statistiques" />
-        <LastTab label="+" />
-      </StyledTabs>
-    </Paper>
-      {value === 0 && <DoctorList/>}
-      {value === 1 && <Dossier/>}
-      {value === 2 }
-      {value === 3 && 
-      <Form 
-         onSubmit = {fields => onSubmit (fields) } 
-      />}
-      <p className="App-intro">{props => apiResponse(props)}</p>
-      </div>
-    );
-  
-}
-
-export default App;
