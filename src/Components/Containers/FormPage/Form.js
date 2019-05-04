@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Input from "./Input"
 import DatePicker from "./DatePicker"
 import styled from 'styled-components'
-import { Select } from '@material-ui/core';
 import SelectGender from "./SelectGender";
 import ProgressLine from "./ProgressLine";
 
@@ -51,6 +50,7 @@ function myFunction() {
   document.getElementById("gender").focus();
 }
 
+
 class Form extends Component {
     state = {
       MD: "",
@@ -70,7 +70,6 @@ class Form extends Component {
  };
 
  onSubmit = (e) => {
-   e.preventDefault();
    this.props.onSubmit(this.state)
    this.setState ({
       MD: "",

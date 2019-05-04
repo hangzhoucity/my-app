@@ -77,9 +77,10 @@ background-color:#DFDEE6;
 
 function App () {
 
-const constructor=(props) =>{
+const constructor = (props) =>{
      props.state = { apiResponse: "" };
 }
+
 const callAPI=() =>{
     fetch("http://localhost:9000/testAPI")
     .then(res => res.text())
@@ -132,9 +133,9 @@ console.log("value" , value)
       {value === 2 }
       {value === 3 && 
       <Form 
-        onSubmit = {fields => this.onSubmit (fields) } 
+         onSubmit = {fields => onSubmit (fields) } 
       />}
-      <p className="App-intro">{props => this.state.apiResponse}</p>
+      <p className="App-intro">{props => apiResponse(props)}</p>
       </div>
     );
   
