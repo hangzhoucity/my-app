@@ -3,11 +3,11 @@
 *******************************/
 
 var
-  gulp         = require('gulp'),
+  gulp         = require('./node_modules/gulp'),
 
   // gulp dependencies
-  chmod        = require('gulp-chmod'),
-  gulpif       = require('gulp-if'),
+  chmod        = require('./node_modules/gulp-chmod'),
+  gulpif       = require('./node_modules/gulp-if'),
 
   // config
   config       = require('../config/user'),

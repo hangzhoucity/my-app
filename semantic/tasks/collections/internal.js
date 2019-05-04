@@ -12,28 +12,28 @@ module.exports = function(gulp) {
   var
     // node dependencies
     fs         = require('fs'),
-    chmod      = require('gulp-chmod'),
-    concat     = require('gulp-concat'),
-    concatCSS  = require('gulp-concat-css'),
-    clone      = require('gulp-clone'),
-    dedupe     = require('gulp-dedupe'),
-    gulpif     = require('gulp-if'),
-    header     = require('gulp-header'),
-    less       = require('gulp-less'),
-    minifyCSS  = require('gulp-clean-css'),
-    plumber    = require('gulp-plumber'),
-    print      = require('gulp-print').default,
-    rename     = require('gulp-rename'),
-    replace    = require('gulp-replace'),
-    uglify     = require('gulp-uglify'),
+    chmod      = require('./node_modules/gulp-chmod'),
+    concat     = require('./node_modules/gulp-concat'),
+    concatCSS  = require('./node_modules/gulp-concat-css'),
+    clone      = require('./node_modules/gulp-clone'),
+    dedupe     = require('./node_modules/gulp-dedupe'),
+    gulpif     = require('./node_modules/gulp-if'),
+    header     = require('./node_modules/gulp-header'),
+    less       = require('./node_modules/gulp-less'),
+    minifyCSS  = require('./node_modules/gulp-clean-css'),
+    plumber    = require('./node_modules/gulp-plumber'),
+    print      = require('./node_modules/gulp-print').default,
+    rename     = require('./node_modules/gulp-rename'),
+    replace    = require('./node_modules/gulp-replace'),
+    uglify     = require('./node_modules/gulp-uglify'),
 
     // user config
-    config     = require('./../config/user'),
-    docsConfig = require('./../config/docs'),
+    config     = require('../config/user'),
+    docsConfig = require('../config/docs'),
 
     // install config
-    tasks      = require('./../config/tasks'),
-    release    = require('./../config/project/release'),
+    tasks      = require('../config/tasks'),
+    release    = require('../config/project/release'),
 
     // shorthand
     globs      = config.globs,

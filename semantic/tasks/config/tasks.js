@@ -1,5 +1,5 @@
 var
-  console = require('better-console'),
+  console = require('./node_modules/better-console'),
   config  = require('./user'),
   release = require('./project/release')
 ;

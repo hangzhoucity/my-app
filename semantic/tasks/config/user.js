@@ -4,10 +4,10 @@
 
 var
   // npm dependencies
-  extend          = require('extend'),
+  extend          = require('./node_modules/extend'),
   fs              = require('fs'),
   path            = require('path'),
-  requireDotFile  = require('require-dot-file'),
+  requireDotFile  = require('./node_modules/require-dot-file'),
 
   // semantic.json defaults
   defaults        = require('./defaults'),

@@ -3,7 +3,7 @@
 *******************************/
 
 var
-  requireDotFile = require('require-dot-file'),
+  requireDotFile = require('./node_modules/require-dot-file'),
   config,
   npmPackage,
   version
@@ -21,7 +21,7 @@ catch(error) {}
 
 
 try {
-  npmPackage = require('../../../package.json');
+  npmPackage = require('../../../package.json.js');
 }
 catch(error) {
   // generate fake package

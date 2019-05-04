@@ -3,27 +3,27 @@
 *******************************/
 
 var
-  gulp         = require('gulp'),
+  gulp         = require('./node_modules/gulp'),
 
   // node dependencies
-  console      = require('better-console'),
+  console      = require('./node_modules/better-console'),
   fs           = require('fs'),
-  map          = require('map-stream'),
+  map          = require('./node_modules/map-stream'),
 
   // gulp dependencies
-  autoprefixer = require('gulp-autoprefixer'),
-  chmod        = require('gulp-chmod'),
-  clone        = require('gulp-clone'),
-  flatten      = require('gulp-flatten'),
-  gulpif       = require('gulp-if'),
-  header       = require('gulp-header'),
-  less         = require('gulp-less'),
-  minifyCSS    = require('gulp-clean-css'),
-  plumber      = require('gulp-plumber'),
-  print        = require('gulp-print').default,
-  rename       = require('gulp-rename'),
-  replace      = require('gulp-replace'),
-  uglify       = require('gulp-uglify'),
+  autoprefixer = require('./node_modules/gulp-autoprefixer'),
+  chmod        = require('./node_modules/gulp-chmod'),
+  clone        = require('./node_modules/gulp-clone'),
+  flatten      = require('./node_modules/gulp-flatten'),
+  gulpif       = require('./node_modules/gulp-if'),
+  header       = require('./node_modules/gulp-header'),
+  less         = require('./node_modules/gulp-less'),
+  minifyCSS    = require('./node_modules/gulp-clean-css'),
+  plumber      = require('./node_modules/gulp-plumber'),
+  print        = require('./node_modules/gulp-print').default,
+  rename       = require('./node_modules/gulp-rename'),
+  replace      = require('./node_modules/gulp-replace'),
+  uglify       = require('./node_modules/gulp-uglify'),
 
   // user config
   config       = require('../config/docs'),

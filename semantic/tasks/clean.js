@@ -3,7 +3,7 @@
 *******************************/
 
 var
-  del    = require('del'),
+  del    = require('./node_modules/del'),
   config = require('./config/user'),
   tasks  = require('./config/tasks')
 ;

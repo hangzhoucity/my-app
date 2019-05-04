@@ -77,6 +77,19 @@ background-color:#DFDEE6;
 
 function App () {
 
+const constructor=(props) =>{
+     props.state = { apiResponse: "" };
+}
+const callAPI=() =>{
+    fetch("http://localhost:9000/testAPI")
+    .then(res => res.text())
+    .then(res => this.setState({ apiResponse: res }))
+    .catch (err => err);
+}
+const componentWillMount=()=>{
+    callAPI();
+}
+
   //creating object
   const onSubmit = (fields) => {
     console.log ("App com got : ", fields );
@@ -89,6 +102,7 @@ function App () {
   }
 console.log("value" , value)
     return (
+
 
       <div className = "App">
       <StyleHead className ="Head">
@@ -120,7 +134,7 @@ console.log("value" , value)
       <Form 
         onSubmit = {fields => this.onSubmit (fields) } 
       />}
-      
+      <p className="App-intro">{props => this.state.apiResponse}</p>
       </div>
     );
   

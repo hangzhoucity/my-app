@@ -4,8 +4,8 @@
 
 var
   // dependencies
-  gulp         = require('gulp-help')(require('gulp')),
-  runSequence  = require('run-sequence'),
+  gulp         = require('./node_modules/gulp-help')(require('./node_modules/gulp')),
+  runSequence  = require('./node_modules/run-sequence'),
 
   // config
   config       = require('./config/user'),

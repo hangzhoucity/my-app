@@ -3,7 +3,7 @@
 *******************************/
 
 var
-  extend   = require('extend'),
+  extend   = require('./node_modules/extend'),
   fs       = require('fs'),
   path     = require('path'),
 

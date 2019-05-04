@@ -5,6 +5,8 @@ import DatePicker from "./DatePicker"
 import styled from 'styled-components'
 import { Select } from '@material-ui/core';
 import SelectGender from "./SelectGender";
+import ProgressLine from "./ProgressLine";
+
 
 //styling form
 const StyledForm = styled.form`
@@ -22,6 +24,10 @@ const StyledFormDate = styled.div`
 
 //Styling the timeline
 const StyledDate = styled.div`
+&&{
+margin-top: 10px;
+display: flex;
+}
 `;
 
 //styling button
@@ -153,6 +159,7 @@ class Form extends Component {
       <StyleButton onClick ={ e => this.onSubmit(e)}> Ajouter </StyleButton>
       </ButtonPosition>
       <StyledDate>
+        <ProgressLine></ProgressLine>
        </StyledDate>
        </StyledFormDate>
       );

@@ -3,21 +3,21 @@
 *******************************/
 
 var
-  gulp         = require('gulp'),
+  gulp         = require('./node_modules/gulp'),
 
   // node dependencies
-  console      = require('better-console'),
+  console      = require('./node_modules/better-console'),
   fs           = require('fs'),
 
   // gulp dependencies
-  chmod        = require('gulp-chmod'),
-  flatten      = require('gulp-flatten'),
-  gulpif       = require('gulp-if'),
-  plumber      = require('gulp-plumber'),
-  print        = require('gulp-print').default,
-  rename       = require('gulp-rename'),
-  replace      = require('gulp-replace'),
-  uglify       = require('gulp-uglify'),
+  chmod        = require('./node_modules/gulp-chmod'),
+  flatten      = require('./node_modules/gulp-flatten'),
+  gulpif       = require('./node_modules/gulp-if'),
+  plumber      = require('./node_modules/gulp-plumber'),
+  print        = require('./node_modules/gulp-print').default,
+  rename       = require('./node_modules/gulp-rename'),
+  replace      = require('./node_modules/gulp-replace'),
+  uglify       = require('./node_modules/gulp-uglify'),
 
   // config
   config       = require('../config/user'),

@@ -8,7 +8,7 @@ var
   defaults       = require('../defaults'),
   release        = require('./release'),
 
-  requireDotFile = require('require-dot-file')
+  requireDotFile = require('./node_modules/require-dot-file')
 ;
 
 /*******************************
