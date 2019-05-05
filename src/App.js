@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from "./Components/Containers/FormPage/Form.js";
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -14,13 +14,12 @@ const [apiResponse, setApiResponse] =useState('');
 
 const callAPI = () =>{
     fetch("http://localhost:9000/testAPI")
-    .then(res => res.text())
-    .then(res => setApiResponse(res))
+    .then(res => {console.log("hello",res)})
     .catch (err => err);
 }
-const componentWillMount=()=>{
-    callAPI();
-}
+useEffect(() =>{
+  callAPI();
+})
 
   //creating object
   const onSubmit = (fields) => {
