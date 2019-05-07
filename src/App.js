@@ -52,6 +52,7 @@ console.log("value" , value)
         indicatorColor="white"
         textColor="black" 
       >
+      
         <FirstTab label="☰" />
         <SecondTab label="Dossier" />
         <ThirdTab label="Statistiques" />
