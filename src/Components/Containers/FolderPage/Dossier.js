@@ -7,17 +7,30 @@ import styled from 'styled-components'
 const Dossier = () => {
   const select = <SelectTest></SelectTest>; 
   const selectorList = [select];
-  const [selectors,setSelectors] = useState();
 
-  const handleSelect = selector = event =>{
-    console.log ("bchange", selectors)
-    setSelectors(event.target.value(selector));
+  const [selectors,setSelectors] = useState("");
+
+  for (let i = 0; i < selectorList; i++) {
+    selectorList.push( 
+       <SelectTest
+         value = {select[i]}
+       />
+        
+
+    )
   }
+
+  const handleSelect = event =>{
+    console.log ("bchange", selectors)
+    setSelectors(event.target.value(selectors));
+  }
+  
 
     return (
       
 
       <div>
+        <SelectTest></SelectTest>
         
         {selectorList.map (select => {
           return(
@@ -25,10 +38,7 @@ const Dossier = () => {
       onClick={handleSelect}
       value ={select[i]}
       />
-          )
-     
-     
-           } )
+    )} )
     }
      <StyleChecked>
         <CheckedList> 
