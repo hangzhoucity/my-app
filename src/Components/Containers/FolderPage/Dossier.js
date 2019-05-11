@@ -5,53 +5,40 @@ import _ from 'lodash';
 import styled from 'styled-components'
 
 const Dossier = () => {
-  const select = <SelectTest></SelectTest>; 
-  const selectorList = [select];
-
-  const [selectors,setSelectors] = useState("");
-
-  for (let i = 0; i < selectorList; i++) {
-    selectorList.push( 
-       <SelectTest
-         value = {select[i]}
-       />
-        
-
-    )
-  }
-
-  const handleSelect = event =>{
-    console.log ("bchange", selectors)
-    setSelectors(event.target.value(selectors));
-  }
   
+  const [selectors,setSelectors] = useState(0);
+  // const newSelector = <SelectTest onClick={addSelectors}/>
+ 
 
-    return (
-      
-
-      <div>
-        <SelectTest></SelectTest>
-        
-        {selectorList.map (select => {
-          return(
-      <SelectTest 
-      onClick={handleSelect}
-      value ={select[i]}
-      />
-    )} )
-    }
-     <StyleChecked>
-        <CheckedList> 
-        </CheckedList>
-      </StyleChecked>
-     </div>
-    )
-
+  const addSelectors = () =>{
+    console.log("aallo",selectors)
+      setSelectors(selectors+1)
   }
 
-
+  const selectorsArray = () =>{
+    console.log("sdfdsf")
+    const returnSelector=[];
+    for (let i=0; i < selectors; i++){
+        returnSelector.push(<SelectTest onClick={addSelectors}/>)
+    }
+    return returnSelector;
+  }
+  const x = selectorsArray();
+  return (
+    <div>
+      <SelectTest onClick={addSelectors}/>
+     {_.map(x,(element) => {
+       return element})}
+      <StyleChecked>
+        <CheckedList />
+      </StyleChecked>
+    </div>
+  );
+}
 
 export default Dossier;
+
+
 
 const StyleChecked = styled.div`
 &&{
@@ -63,4 +50,5 @@ const StyleChecked = styled.div`
 
 }
 `;
+
 

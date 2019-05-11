@@ -63,7 +63,7 @@ const styles = theme => ({
   },
 });
 
-const SelectTest = ({classes}) => {
+const SelectTest = ({classes,onClick}) => {
 
 //   state = {
 //     tests: '',
@@ -84,13 +84,13 @@ const SelectTest = ({classes}) => {
       <form className={classes.root} autoComplete="off">
        
         <FormControl className={classes.margin}>
-        <p> Dr Paul | Dossier ouvert le 19 avril</p>
           <InputLabel htmlFor="age-customized-native-simple" className={classes.bootstrapFormLabel}>
           </InputLabel>
           <NativeSelect
             value={tests}
             onChange={handleChange}
             input={<BootstrapInput name="age" id="age-customized-native-simple" />}
+            onClick={onClick}
           >
           
             <StyleSelect> Nouvelle examen </StyleSelect>
