@@ -31,10 +31,9 @@ useEffect(() =>{
   function handleChange(event, newValue) {
     setValue(newValue);
   }
+
 console.log("value" , value)
     return (
-
-
       <div className = "App">
       <StyleHead className ="Head">
       <StyleItem> TREMBLAY, Jean </StyleItem> 
@@ -45,7 +44,7 @@ console.log("value" , value)
       <StyleItem>RAMQ TREJ79010116</StyleItem>
       </StyleLeft>
       
-    <Paper >
+      <Paper >
       <StyledTabs
         value={value}
         onChange={handleChange}
@@ -58,7 +57,7 @@ console.log("value" , value)
         <ThirdTab label="Statistiques" />
         <LastTab label="+" />
       </StyledTabs>
-    </Paper>
+     </Paper>
       {value === 0 && <DoctorList/>}
       {value === 1 && <Dossier/>}
       {value === 2 }
@@ -69,7 +68,6 @@ console.log("value" , value)
       <p className="App-intro">{props => apiResponse(props)}</p>
       </div>
     );
-  
 }
 
 export default App;

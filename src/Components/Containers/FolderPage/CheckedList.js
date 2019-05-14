@@ -51,10 +51,10 @@ class CheckedList extends Component {
 
   createCheckbox = label => (
     <CheckBox
-            label={label}
-            handleCheckboxChange={this.toggleCheckbox}
-            key={label}
-        />
+      label={label}
+      handleCheckboxChange={this.toggleCheckbox}
+      key={label}
+    />
   )
 
   createCheckboxes = () => (

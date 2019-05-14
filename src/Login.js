@@ -1,35 +1,25 @@
 import React from 'react';
 import Select from 'react-select';
 
-const Institution = [
-    { label: "Apple", value: 1 }
-];
-
-const [PasswordName, setPasswordName] = useState("");
-
-function handlePasswordChange(PasswordName) {
-    console.log ("passwordChanged", PasswordName)
-    setPasswordName(PasswordChange);
-  }
-
-const Password = [
-    password = ""
-]
-
-const Login = () => (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-4"></div>
-        <div className="col-md-4">
-          <Select options={ Institution } />
-          <Password 
-          type = "password"
-          onChange={handlePasswordChange(PasswordName)}
-          />
-        </div>
-        <div className="col-md-4"></div>
-      </div>
-    </div>
-  );
-  
-  export default Login
+// login.component.js
+import { useState } from 'react'
+function handleLogin(login) {
+        axios.post('/api/login/', login).then((v) => {
+            // ...
+        }, (err) => {
+            // ...
+        })
+}
+function LoginComponent() {
+    const [loginDetails, setLoginDetails] = useState({Institution: ['CISSME Hôpital Pierre-Boucher'], password: '1234'})
+    return (
+      <div>
+                <form>
+                    <input id='institution' onInput={()=>setLoginDetails({institution: this.value})} />
+                    <input id='password' onInput={()=>setLoginDetails({password: this.value})} />
+                    <button onClick={()=>handleLogin(loginDetails)}>Connexion</button>
+                </form>
+            </div>        
+    );
+}
+export default login;
