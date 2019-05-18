@@ -21,10 +21,14 @@ useEffect(() =>{
   callAPI();
 })
 
+const componentDidMount= () => {
+  console.log('COMPONENT DID MOUNT');
+};
+
   //creating object
-  const onSubmit = (fields) => {
-    console.log ("App com got : ", fields );
-  };
+  // const onSubmit = (fields) => {
+  //   console.log ("App com got : ", fields );
+  // };
   
   const [value, setValue] = React.useState(0);
 
@@ -63,7 +67,8 @@ console.log("value" , value)
       {value === 2 }
       {value === 3 && 
       <Form 
-         onSubmit = {fields => onSubmit (fields) } 
+      //    onSubmit = {fields => addPatient (fields) } 
+      // 
       />}
       <p className="App-intro">{props => apiResponse(props)}</p>
       </div>
