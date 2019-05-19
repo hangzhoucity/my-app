@@ -152,7 +152,7 @@ class Form extends Component {
        
        </StyledFormPage>
        <ButtonPosition>
-      <StyleButton onClick = {this.addPatient.bind(this)}> Ajouter </StyleButton>
+      <StyleButton type = 'submit' onClick = {this.addPatient.bind(this)}> Ajouter </StyleButton>
       </ButtonPosition>
       <StyledDate>
         <ProgressLine></ProgressLine>
