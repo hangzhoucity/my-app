@@ -1,6 +1,5 @@
 import React, { useState }from 'react';
 import styled from 'styled-components';
-import renderIf from 'render-if';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 
@@ -38,13 +37,6 @@ border: 1px solid #CCC;
 background-color : #e0e0eb ;
 `;
 
-const ClientName = styled.div`
-padding: 25px 70px;
-display:flex;
-flex-direction:column;
-align-self : flex-end;
-
-`;
 const ClientItem = styled.div`
 display:flex;
 justify-content:flex-start;
@@ -77,7 +69,6 @@ function handleChange(doctorName) {
     setDoctorName(doctorName);
   }
 
-const mockData = ["Julie Bertrand" ,"David Germain" , "Tam Le Duc"];
 
 const doctor1 = {
     name:"Colisse",

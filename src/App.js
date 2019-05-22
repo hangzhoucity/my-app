@@ -13,7 +13,7 @@ const App  =(props) => {
 const [apiResponse, setApiResponse] =useState('');
 
 const callAPI = () =>{
-    fetch("http://localhost:9000/testAPI")
+    fetch("http://localhost:7000/api/Hospital")
     .then(res => {console.log("hello",res)})
     .catch (err => err);
 }

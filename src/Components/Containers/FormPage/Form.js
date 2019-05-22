@@ -12,16 +12,7 @@ import ProgressLine from "./ProgressLine";
 
 
 class Form extends Component {
-    state = {
-      MD: "",
-      firstName: "",
-      lastName: "",
-      date: "",
-      RAMQ: "",
-      dossier: "",
-      sexe: [],
-      tel: ""
-    };
+
     
  handleChange = e => {
    this.setState({
@@ -45,21 +36,12 @@ class Form extends Component {
 
  //AJAX CALL HERE
  addPatient(event) {
+   const test = "ttest";
   event.preventDefault();
-    let data = {
-    ramq: this.refs.ramq.value,
-    name: this.refs.name.value,
-    surname: this.refs.surname.value,
-    dob: this.refs.dob.value,
-    sexe: this.refs.sexe.value,
-    phoneNo: this.refs.phoneNo.value,
-    MD: this.refs.MD.value,
-    file: this.refs.file.value
-    };
-    var request = new Request('http://localhost: 3000/api/Hospital', {
+    var request = new Request('http://localhost:7000/api/Hospital', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
-    body: JSON.stringyfy(data)
+    body:{test}
   });
 
   //xmlhttprequest()
@@ -153,6 +135,7 @@ class Form extends Component {
        </StyledFormPage>
        <ButtonPosition>
       <StyleButton type = 'submit' onClick = {this.addPatient.bind(this)}> Ajouter </StyleButton>
+      <pre></pre>
       </ButtonPosition>
       <StyledDate>
         <ProgressLine></ProgressLine>
