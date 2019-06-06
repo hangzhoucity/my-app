@@ -12,18 +12,18 @@ const App  =(props) => {
 
 const [apiResponse, setApiResponse] =useState('');
 
-const callAPI = () =>{
-    fetch("http://localhost:9000/api/Hospital")
-    .then(res => {console.log("hello",res)})
-    .catch (err => err);
-}
-useEffect(() =>{
-  callAPI();
-})
+// const callAPI = () =>{
+//     fetch("http://localhost:9000/api/Hospital")
+//     .then(res => {console.log("hello",res)})
+//     .catch (err => err);
+// }
+// useEffect(() =>{
+//   callAPI();
+// })
 
-const componentDidMount= () => {
-  console.log('COMPONENT DID MOUNT');
-};
+// const componentDidMount= () => {
+//   console.log('COMPONENT DID MOUNT');
+// };
 
   //creating object
   // const onSubmit = (fields) => {
@@ -37,6 +37,8 @@ const componentDidMount= () => {
   }
 
 console.log("value" , value)
+
+
     return (
       <div className = "App">
       <StyleHead className ="Head">
@@ -70,7 +72,6 @@ console.log("value" , value)
       //    onSubmit = {fields => addPatient (fields) } 
       // 
       />}
-      <p className="App-intro">{props => apiResponse(props)}</p>
       </div>
     );
 }

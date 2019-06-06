@@ -6,6 +6,64 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import styled from 'styled-components';
 
+
+
+const SelectTest = ({classes,onClick}) => {
+
+//   state = {
+//     tests: '',
+//   };
+  const [tests,setTest] =useState('');
+
+//   handleChange = event => {
+//     this.setState({ tests: event.target.value });
+//   };
+
+  const handleChange = (e) =>{
+      setTest(e.target.value)
+  }
+
+
+    return (
+      <div>
+      <form className={classes.root} autoComplete="off">
+       
+        <FormControl className={classes.margin}>
+          <InputLabel htmlFor="age-customized-native-simple" className={classes.bootstrapFormLabel}>
+          </InputLabel>
+          <NativeSelect
+            value={tests}
+            onChange={e => {handleChange(e)}}
+            input={<BootstrapInput name="age" id="age-customized-native-simple" />}
+            onClick={onClick}
+          >
+          
+            <StyleSelect> Nouvelle examen </StyleSelect>
+            <StyleSelect value={1}>Bronchoscopie</StyleSelect>
+            <StyleSelect value={2}>BTT</StyleSelect>
+            <StyleSelect value={3}>Biopsie Métastase</StyleSelect>
+            <StyleSelect value={4}>CT cérébral</StyleSelect>
+            <StyleSelect value={5}>CT abdo-pelvien</StyleSelect>
+            <StyleSelect value={6}>EBUS</StyleSelect>
+            <StyleSelect value={7}>EUS</StyleSelect>
+            <StyleSelect value={8}>Épreuve Effort</StyleSelect>
+            <StyleSelect value={9}>IRM célébral</StyleSelect>
+            <StyleSelect value={10}>Scintigraphie osseuse</StyleSelect>
+            <StyleSelect value={11}>Scintigraphie perfusion</StyleSelect>
+            <StyleSelect value={12}>TEP-CT</StyleSelect>
+            <StyleSelect value={13}>TFR</StyleSelect>
+            <StyleSelect value={14}>Autre</StyleSelect>
+           
+          </NativeSelect>
+        </FormControl>
+        
+      </form>
+      </div>
+    );
+  }
+
+export default withStyles(styles)(SelectTest);
+
 const StyleSelect = styled.option`
 display: flex;
 justify-content: center;
@@ -61,62 +119,3 @@ const styles = theme => ({
     fontSize: 20,
   },
 });
-
-const SelectTest = ({classes,onClick}) => {
-
-//   state = {
-//     tests: '',
-//   };
-  const [tests,setTest] =useState('');
-
-//   handleChange = event => {
-//     this.setState({ tests: event.target.value });
-//   };
-
-  const handleChange = event =>{
-      setTest(event.target.value)
-  }
-
-
-    return (
-      <div>
-      <form className={classes.root} autoComplete="off">
-       
-        <FormControl className={classes.margin}>
-          <InputLabel htmlFor="age-customized-native-simple" className={classes.bootstrapFormLabel}>
-          </InputLabel>
-          <NativeSelect
-            value={tests}
-            onChange={handleChange}
-            input={<BootstrapInput name="age" id="age-customized-native-simple" />}
-            onClick={onClick}
-          >
-          
-            <StyleSelect> Nouvelle examen </StyleSelect>
-            <StyleSelect value={1}>Bronchoscopie</StyleSelect>
-            <StyleSelect value={2}>BTT</StyleSelect>
-            <StyleSelect value={3}>Biopsie Métastase</StyleSelect>
-            <StyleSelect value={4}>CT cérébral</StyleSelect>
-            <StyleSelect value={5}>CT abdo-pelvien</StyleSelect>
-            <StyleSelect value={6}>EBUS</StyleSelect>
-            <StyleSelect value={7}>EUS</StyleSelect>
-            <StyleSelect value={8}>Épreuve Effort</StyleSelect>
-            <StyleSelect value={9}>IRM célébral</StyleSelect>
-            <StyleSelect value={10}>Scintigraphie osseuse</StyleSelect>
-            <StyleSelect value={11}>Scintigraphie perfusion</StyleSelect>
-            <StyleSelect value={12}>TEP-CT</StyleSelect>
-            <StyleSelect value={13}>TFR</StyleSelect>
-            <StyleSelect value={14}>Autre</StyleSelect>
-           
-          </NativeSelect>
-        </FormControl>
-        
-      </form>
-      </div>
-    );
-  }
-
-
-
-
-export default withStyles(styles)(SelectTest);

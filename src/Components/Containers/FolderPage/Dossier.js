@@ -1,54 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import SelectTest from "./SelectTest";
 import CheckedList from "./CheckedList";
-import _ from 'lodash';
-import styled from 'styled-components'
+import _ from "lodash";
+import styled from "styled-components";
+import ExamComponent from "./ExamComponent";
+import TimeComponent from "./TimeComponent";
+const { DateTime } = require("luxon");
+
 
 const Dossier = () => {
-  
-  const [selectors,setSelectors] = useState(0);
-  // const newSelector = <SelectTest onClick={addSelectors}/>
+  const [value, setValue] = useState("");
+  const [time, setTime] = useState("");
+
  
 
-  const addSelectors = () =>{
-    console.log("aallo",selectors)
-      setSelectors(selectors+1)
-  }
+  return(
+  <div>
+    
+    <ExamComponent />
 
-  const selectorsArray = () =>{
-    console.log("sdfdsf")
-    const returnSelector=[];
-    for (let i=0; i < selectors; i++){
-        returnSelector.push(<SelectTest onClick={addSelectors}/>)
-    }
-    return returnSelector;
-  }
-  const x = selectorsArray();
-  return (
-    <div>
-      <SelectTest onClick={addSelectors}/>
-     {_.map(x,(element) => {
-       return element})}
-      <StyleChecked>
-        <CheckedList />
-      </StyleChecked>
-    </div>
-  );
-}
+    <TimeComponent />
+
+    <StyleChecked>
+      <CheckedList />
+    </StyleChecked>
+  </div>
+  )
+};
 
 export default Dossier;
 
-
-
 const StyleChecked = styled.div`
-&&{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  justify-content: flex-start;
-  align-content: flex-end;
-
-}
+  && {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-content: flex-end;
+  }
 `;
-
-
